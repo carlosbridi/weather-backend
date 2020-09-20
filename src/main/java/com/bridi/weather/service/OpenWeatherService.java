@@ -1,7 +1,5 @@
 package com.bridi.weather.service;
 
-import java.util.stream.Collectors;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
@@ -34,8 +32,6 @@ public class OpenWeatherService {
 				.queryParam("units", METRIC)
 				.getUriBuilder().toString(), WeatherInfo.class);
 				
-		response.setList(response.getList().stream().filter(item -> item.isUseOnforecast()).collect(Collectors.toList()));
-		
 		return response;
 	}
 	
@@ -55,13 +51,7 @@ public class OpenWeatherService {
 				.queryParam("units", METRIC)
 				.getUriBuilder().toString(), WeatherInfo.class);
 			
-		
-		//Set flag true to get only one record of temperature
-//		response.getList().forEach(listItem -> {
-//			listItem.setUseOnforecast(listItem.getDt_txt().contains("12:00:00"));
-//		});
-//		response.setList(response.getList().stream().filter(item -> item.isUseOnforecast()).collect(Collectors.toList()));
-//		
+	
 		return response;
 	}
 

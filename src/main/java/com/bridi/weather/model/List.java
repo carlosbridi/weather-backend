@@ -20,6 +20,4 @@ public class List {
 	
 	private Date date;
 	
-	private boolean useOnforecast = false;
-	
 }
