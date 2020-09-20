@@ -57,11 +57,11 @@ public class OpenWeatherService {
 			
 		
 		//Set flag true to get only one record of temperature
-		response.getList().forEach(listItem -> {
-			listItem.setUseOnforecast(listItem.getDt_txt().contains("12:00:00"));
-		});
-		response.setList(response.getList().stream().filter(item -> item.isUseOnforecast()).collect(Collectors.toList()));
-		
+//		response.getList().forEach(listItem -> {
+//			listItem.setUseOnforecast(listItem.getDt_txt().contains("12:00:00"));
+//		});
+//		response.setList(response.getList().stream().filter(item -> item.isUseOnforecast()).collect(Collectors.toList()));
+//		
 		return response;
 	}
 
