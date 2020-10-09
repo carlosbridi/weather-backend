@@ -14,7 +14,7 @@ public class MongoConfig {
 
 	@Bean
 	public MongoClient mongo() {
-		ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017/test");
+		ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017/weather");
 		MongoClientSettings mongoClientSettings = MongoClientSettings.builder().applyConnectionString(connectionString)
 				.build();
 
