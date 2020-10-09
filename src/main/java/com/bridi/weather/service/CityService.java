@@ -29,7 +29,7 @@ public class CityService {
 		if (Objects.nonNull(findByName))
 			throw new ServiceException("Cidade já cadastrada");
 		else {
-			City cityCreated = openWeatherService.getWeatherInfo(city.getName(), city.getCountry()).getCity();
+			City cityCreated = openWeatherService.getCityInfo(city.getName(), city.getCountry()).getCity();
 			return cityRepository.save(cityCreated);
 		}		
 	}	

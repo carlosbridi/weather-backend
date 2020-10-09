@@ -1,26 +1,22 @@
 package com.bridi.weather.service;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.verify;
 
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.bridi.weather.exception.ServiceException;
 import com.bridi.weather.model.City;
 import com.bridi.weather.model.WeatherInfo;
 import com.bridi.weather.repository.CityRepository;
-
-import org.junit.rules.ExpectedException;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CityServiceTest {
@@ -46,7 +42,7 @@ public class CityServiceTest {
 		weatherInfo.setCity(c);
 			
 		Mockito.when(cityRepository.findByName(Mockito.anyString())).thenReturn(null);
-		Mockito.when(openWeatherService.getWeatherInfo(Mockito.any(), Mockito.any())).thenReturn(weatherInfo);
+		Mockito.when(openWeatherService.getCityInfo(Mockito.any(), Mockito.any())).thenReturn(weatherInfo);
 		
 		cityService.save(c);
 		

@@ -21,7 +21,7 @@ public class OpenWeatherService {
 	 * @param city City name
 	 * @return
 	 */
-	public WeatherInfo getWeatherInfo(String city, String country) {
+	public WeatherInfo getCityInfo(String city, String country) {
 		RestTemplate restTemplate = new RestTemplate();
 		Client newClient = ClientBuilder.newClient();
 		WeatherInfo response = restTemplate.getForObject(newClient
